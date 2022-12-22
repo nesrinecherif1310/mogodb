@@ -19,13 +19,23 @@ MongoClient.connect(url, function(err, client) {  console.log("Connecté à Mong
  {Lastname:"Fatnassi",Firstname:"Sarra",Email:"sarra.f@gmail.com",age:40},
  {Lastname:"Fatnassi",Firstname:"Rym",age:4},
  {Lastname:"Cherif",Firstname:"Sami",age:3}])
- db.collection("listedecontact").insertMany(manydata,function(err,res){
-    if(err)throw err
-    console.log ("run")
-    client.close();
+ //db.collection("listedecontact").insertMany(manydata,function(err,res){
+    //if(err)throw err
+    //console.log ("run")
+    
+   //client.close();
+
+//})
+
+    
+//const result=db.collection("listedecontact").find({"age":{$lt:18}})
+//console.log (result)
+// db.collection("listedecontact").find({"age":{$lt:18}}).toArray().then(function(result){console.log(result)})
+
+
+
+db.collection("listedecontact").updateOne({_id:"63a37c6f6ed21817573eb714"},{$set:{Firstname:"Anis"}})
+ console.log ("change")
+
 })
-
-
-
-});
 
